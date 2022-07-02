@@ -230,17 +230,16 @@ def detect_image(network, class_names, image, thresh=.5, hier_thresh=.5, nms=.45
     free_detections(detections, num)
     return sorted(predictions, key=lambda x: x[1])
 
-
-if os.name == "posix":
-    cwd = os.path.dirname(__file__)
-    lib = CDLL(cwd + "/libdarknet.so", RTLD_GLOBAL)
-elif os.name == "nt":
-    cwd = os.path.dirname(__file__)
-    os.environ['PATH'] = cwd + ';' + os.environ['PATH']
-    lib = CDLL("darknet.dll", RTLD_GLOBAL)
-else:
-    print("Unsupported OS")
-    exit
+#if os.name == "posix":
+ #   cwd = os.path.dirname(__file__)
+  #  lib = CDLL(cwd + "/libdarknet.so", RTLD_GLOBAL)
+#elif os.name == "nt":
+ #   cwd = os.path.dirname(__file__)
+  #  os.environ['PATH'] = cwd + ';' + os.environ['PATH']
+   # lib = CDLL("darknet.dll", RTLD_GLOBAL)
+#else:
+ #   print("Unsupported OS")
+  #  exit
 
 lib.network_width.argtypes = [c_void_p]
 lib.network_width.restype = c_int
