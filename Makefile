@@ -5,8 +5,8 @@ OPENCV=1
 AVX=1
 OPENMP=1
 LIBSO=1
-ZED_CAMERA=0
-ZED_CAMERA_v2_8=0
+ZED_CAMERA=1
+ZED_CAMERA_v2_8=1
 
 # set GPU=1 and CUDNN=1 to speedup on GPU
 # set CUDNN_HALF=1 to further speedup 3 x times (Mixed-precision on Tensor Cores) GPU: Volta, Xavier, Turing and higher
